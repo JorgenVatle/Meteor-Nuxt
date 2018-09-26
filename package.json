@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start npm run meteor & npm run nuxt",
     "meteor": "cd meteor && npm start",
-    "nuxt": "cd nuxt && npm run dev"
+    "nuxt": "cd nuxt && npm run dev",
+    "setup": "cd nuxt && npm install"
   },
   "repository": {
     "type": "git",
