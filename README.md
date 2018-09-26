@@ -6,7 +6,6 @@ We use Nuxt for it's excellent SSR capabilities with Vue. Something Meteor reall
 And we use Meteor for it's awesome DDP client and server.
 
 ## Installation
-**Windows:**
 ```bash
 npm run setup
 ```
