@@ -51,6 +51,17 @@ export default {
     created() {
       Meteor.call('connection.info', (err, resp) => {
           console.log({err, resp});
+
+          if (err) {
+              this.$snackbar.open({
+                  message: 'Exception encountered while processing `connection.info` Meteor method.',
+              });
+              return;
+          }
+
+          this.$snackbar.open({
+              message: `Connected to Meteor! (Connection ID: ${resp.id})`
+          });
       })
     }
 }
