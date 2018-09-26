@@ -32,6 +32,7 @@
 
 <script>
 import BLogo from '@/components/Logo'
+import 'meteor-client';
 
 export default {
   name: 'HomePage',
@@ -45,6 +46,12 @@ export default {
               { icon: 'arrange-bring-to-front', title: 'Lightweight', content: `<span>No other internal dependency</span>` }
           ]
       }
-  }
+  },
+
+    created() {
+      Meteor.call('connection.info', (err, resp) => {
+          console.log({err, resp});
+      })
+    }
 }
 </script>
