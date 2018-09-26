@@ -14,3 +14,6 @@ npm run setup
 ```bash
 npm start
 ```
+
+## License
+MIT
