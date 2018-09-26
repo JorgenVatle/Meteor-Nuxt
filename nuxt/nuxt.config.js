@@ -47,6 +47,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: [
+        'meteor-client'
+    ],
+
     /*
     ** You can extend webpack config here
     */
@@ -54,4 +58,4 @@ module.exports = {
       
     }
   }
-}
+};
