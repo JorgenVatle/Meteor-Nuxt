@@ -32,7 +32,6 @@
 
 <script>
 import BLogo from '@/components/Logo'
-import 'meteor-client';
 
 export default {
   name: 'HomePage',
