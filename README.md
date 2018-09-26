@@ -3,7 +3,7 @@ A wicked experiment attempting combining Meteor and Nuxt for highly modern appli
 responsibilities.
 
 We use Nuxt for it's excellent SSR capabilities with Vue. Something Meteor really can't do very well.
-And we use Meteor for it's awesome DDP client and server.
+Meteor is used simply for what it does do very well, DDP.
 
 ## Installation
 ```bash
