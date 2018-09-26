@@ -1,0 +1,24 @@
+{
+  "name": "meteor-nuxt",
+  "version": "1.0.0",
+  "description": "A wicked experiment combining Nuxt and Meteor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgenVatle/Meteor-Nuxt.git"
+  },
+  "keywords": [
+    "Meteor",
+    "Nuxt",
+    "Vue",
+    "Meteor-Bundle"
+  ],
+  "author": "Jørgen Vatle <Jorgen@WcAServices.net> (https://github.com/JorgenVatle)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JorgenVatle/Meteor-Nuxt/issues"
+  },
+  "homepage": "https://github.com/JorgenVatle/Meteor-Nuxt#readme"
+}
