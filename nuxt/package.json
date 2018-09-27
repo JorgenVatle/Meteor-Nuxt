@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
+    "meteor": "file:../meteor",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1"
   },
