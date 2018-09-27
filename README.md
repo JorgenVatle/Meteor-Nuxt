@@ -14,6 +14,9 @@ npm run setup
 ```bash
 npm start
 ```
+This will start up two servers, Meteor and Nuxt.
+
+Once both servers are running, you can access the app through [localhost:8080](http://localhost:8080).
 
 ## License
 MIT
