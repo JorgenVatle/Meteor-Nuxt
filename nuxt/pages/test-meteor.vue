@@ -7,7 +7,9 @@
                 </p>
             </header>
             <div class="card-content">
-                <span class="message" v-for="message in messages" v-text="message.content"></span>
+                <div v-for="message in messages">
+                    <span class="message" v-text="message.content"></span>
+                </div>
             </div>
             <footer class="card-footer">
                 <form @submit.prevent="sendMessage" class="card-footer-item">
