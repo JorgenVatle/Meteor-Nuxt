@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import SimpleSchema from 'simpl-schema';
 import Messages from './messages';
 
 Meteor.startup(() => {
@@ -10,7 +11,12 @@ Meteor.startup(() => {
          * @param content
          */
         'messages.post'(content) {
-            check(content, String);
+            new SimpleSchema({
+                content: {
+                    type: String,
+                    max: 255,
+                }
+            }).validate({content});
 
             Messages.insert({ content, createdAt: new Date() })
         }
