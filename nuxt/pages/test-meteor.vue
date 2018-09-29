@@ -60,7 +60,7 @@
             },
 
             messages() {
-                return Messages.find({}, { sort: { createdAt: -1 } });
+                return Messages.find({}, { sort: { createdAt: 1 } });
             }
         }
     }
