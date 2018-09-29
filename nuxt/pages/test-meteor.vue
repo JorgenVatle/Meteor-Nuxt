@@ -41,6 +41,10 @@
                 const message = this.message;
                 this.message = '';
 
+                if (!message) {
+                    return;
+                }
+
                 Meteor.call('messages.post', message, (err, resp) => {
                     this.loading = false;
 
