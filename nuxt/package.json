@@ -15,7 +15,8 @@
     "cross-env": "^5.2.0",
     "meteor": "file:../meteor",
     "nuxt": "^2.0.0",
-    "nuxt-buefy": "^0.2.1"
+    "nuxt-buefy": "^0.2.1",
+    "vue-meteor-tracker": "^2.0.0-beta.3"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
