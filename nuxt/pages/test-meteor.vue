@@ -6,7 +6,7 @@
                     Basic Chat Widget
                 </p>
             </header>
-            <div class="card-content messages-container">
+            <div class="card-content messages-container" ref="container">
                 <div v-for="message in messages" class="message-container">
                     <span class="message" v-text="message.content"></span>
                 </div>
@@ -65,6 +65,14 @@
 
             messages() {
                 return Messages.find({}, { sort: { createdAt: 1 } });
+            }
+        },
+
+        watch: {
+            '$subReady.messages'() {
+                setTimeout(() => {
+                    this.$refs.container.scrollTop = this.$refs.container.scrollHeight;
+                }, 100);
             }
         }
     }
