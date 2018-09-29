@@ -1,4 +1,34 @@
-const pkg = require('./package')
+const pkg = require('./package');
+const path = require('path');
+
+/**
+ * Resolve external module.
+ *
+ * @param context
+ * @param request
+ * @param callback
+ * @returns {boolean|void|*}
+ */
+function resolveExternals(context, request, callback) {
+  return resolveMeteor(request, callback) || callback();
+}
+
+/**
+ * Resolves a Meteor module.
+ *
+ * @param request
+ * @param callback
+ * @returns {boolean}
+ */
+function resolveMeteor(request, callback) {
+  const match = request.match(/^meteor\/(.+)$/);
+  const pack = match && match[1];
+
+  if (pack) {
+    callback(null, 'Package["' + pack + '"]');
+    return true;
+  }
+}
 
 module.exports = {
   mode: 'spa',
@@ -55,8 +85,9 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      
+    extend(config, context) {
+      config.resolve.alias['api'] = path.join(__dirname, '../meteor/imports/api');
+      config.externals = [resolveExternals];
     }
   }
 };
