@@ -6,7 +6,7 @@
                     Basic Chat Widget
                 </p>
             </header>
-            <div class="card-content">
+            <div class="card-content messages-container">
                 <div v-for="message in messages" class="message-container">
                     <span class="message" v-text="message.content"></span>
                 </div>
@@ -83,5 +83,11 @@
 
     .field.is-fullwidth {
         width: 100%;
+    }
+
+    .messages-container {
+        height: 75vh;
+        max-height: 75vh;
+        overflow-y: scroll;
     }
 </style>
