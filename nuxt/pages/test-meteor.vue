@@ -26,4 +26,8 @@
         background-color: ghostwhite;
         border-radius: 5px;
     }
+
+    .field.is-fullwidth {
+        width: 100%;
+    }
 </style>
