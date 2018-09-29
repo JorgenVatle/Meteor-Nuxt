@@ -38,9 +38,10 @@
 
         methods: {
             sendMessage() {
+                const message = this.message;
                 this.message = '';
 
-                Meteor.call('messages.post', this.message, (err, resp) => {
+                Meteor.call('messages.post', message, (err, resp) => {
                     this.loading = false;
 
                     if (err) {
