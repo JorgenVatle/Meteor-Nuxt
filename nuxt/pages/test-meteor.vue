@@ -7,7 +7,7 @@
                 </p>
             </header>
             <div class="card-content">
-                <div v-for="message in messages">
+                <div v-for="message in messages" class="message-container">
                     <span class="message" v-text="message.content"></span>
                 </div>
             </div>
@@ -67,6 +67,10 @@
 </script>
 
 <style>
+    .message-container:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
     .message {
         padding: 0.2em 0.4em;
         background-color: ghostwhite;
