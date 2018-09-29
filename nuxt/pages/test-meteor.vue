@@ -9,6 +9,13 @@
             <div class="card-content">
                 <span class="message">Testing testing 123</span>
             </div>
+            <footer class="card-footer">
+                <div class="card-footer-item">
+                    <b-field class="is-fullwidth">
+                        <b-input expanded placeholder="Enter your message."></b-input>
+                    </b-field>
+                </div>
+            </footer>
         </div>
     </section>
 </template>
