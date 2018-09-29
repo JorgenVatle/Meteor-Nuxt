@@ -12,6 +12,7 @@
     "meteor": "meteor-client bundle ../meteor -s ../meteor"
   },
   "dependencies": {
+    "buefy-loading-tracker": "^1.1.6",
     "cross-env": "^5.2.0",
     "meteor": "file:../meteor",
     "nuxt": "^2.0.0",
