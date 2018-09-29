@@ -10,11 +10,14 @@
                 <span class="message">Testing testing 123</span>
             </div>
             <footer class="card-footer">
-                <div class="card-footer-item">
+                <form class="card-footer-item">
                     <b-field class="is-fullwidth">
                         <b-input expanded placeholder="Enter your message."></b-input>
+                        <p class="control">
+                            <button type="submit" class="button is-primary">Send</button>
+                        </p>
                     </b-field>
-                </div>
+                </form>
             </footer>
         </div>
     </section>
