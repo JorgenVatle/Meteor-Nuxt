@@ -6,7 +6,7 @@ Meteor.startup(() => {
     Meteor.publish('messages', () => {
         return Messages.find({}, {
             sort: {
-                createdAt: 1,
+                createdAt: -1,
             },
             limit: 50,
         })
