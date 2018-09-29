@@ -10,9 +10,9 @@
                 <span class="message" v-for="message in messages" v-text="message.content"></span>
             </div>
             <footer class="card-footer">
-                <form class="card-footer-item">
+                <form @submit.prevent="sendMessage" class="card-footer-item">
                     <b-field class="is-fullwidth">
-                        <b-input expanded placeholder="Enter your message."></b-input>
+                        <b-input expanded placeholder="Enter your message." v-model="message"></b-input>
                         <p class="control">
                             <button type="submit" class="button is-primary">Send</button>
                         </p>
@@ -27,6 +27,28 @@
     import Messages from 'api/messages/messages';
 
     export default {
+        data() {
+            return {
+                loading: false,
+                message: '',
+            }
+        },
+
+        methods: {
+            sendMessage() {
+                Meteor.call('messages.post', this.message, (err, resp) => {
+                    this.loading = false;
+
+                    if (err) {
+                        this.$toast.open({
+                            type: 'is-danger',
+                            message: 'Could not post message!',
+                        })
+                    }
+                });
+            }
+        },
+
         meteor: {
             $subscribe: {
                 messages: [],
