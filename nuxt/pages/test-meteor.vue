@@ -7,7 +7,7 @@
                 </p>
             </header>
             <div class="card-content">
-                <span class="message">Testing testing 123</span>
+                <span class="message" v-for="message in messages" v-text="message.content"></span>
             </div>
             <footer class="card-footer">
                 <form class="card-footer-item">
@@ -22,6 +22,22 @@
         </div>
     </section>
 </template>
+
+<script>
+    import Messages from 'api/messages/messages';
+
+    export default {
+        meteor: {
+            $subscribe: {
+                messages: [],
+            },
+
+            messages() {
+                return Messages.find({}, { sort: { createdAt: -1 } });
+            }
+        }
+    }
+</script>
 
 <style>
     .message {
