@@ -36,6 +36,8 @@
 
         methods: {
             sendMessage() {
+                this.message = '';
+
                 Meteor.call('messages.post', this.message, (err, resp) => {
                     this.loading = false;
 
