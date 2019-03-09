@@ -14,7 +14,7 @@
   "dependencies": {
     "buefy-loading-tracker": "^1.1.6",
     "cross-env": "^5.2.0",
-    "meteor-client-bundler": "^0.5.9",
+    "meteor-client-bundler": "^0.6.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1",
     "vue-meteor-tracker": "^2.0.0-beta.3"
