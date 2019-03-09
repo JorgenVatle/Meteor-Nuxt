@@ -7,7 +7,9 @@
     "start": "concurrently \"npm:meteor\" \"npm:nuxt\"",
     "meteor": "cd meteor && npm start",
     "nuxt": "cd nuxt && npm run dev",
-    "setup": "cd nuxt && npm install"
+    "setup": "npm run setup:nuxt && npm run setup:nuxt",
+    "setup:meteor": "cd meteor && meteor npm i",
+    "setup:nuxt": "cd nuxt && npm i"
   },
   "repository": {
     "type": "git",
