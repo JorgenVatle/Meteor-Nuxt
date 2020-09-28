@@ -40,7 +40,7 @@ declare module 'simpleddp' {
   export default class SimpleDDP {
     constructor(opts: {
       endpoint: string;
-      SocketConstructor: WebSocket;
+      SocketConstructor: typeof WebSocket;
       reconnectInterval?: number;
     }, plugins?: any[]);
     collection<T = any>(name: string): MeteorCursor<T>
