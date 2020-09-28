@@ -1,3 +1,3 @@
-export interface KeyVal<T = any> {
+declare interface KeyVal<T = any> {
   [key: string]: T;
 }
