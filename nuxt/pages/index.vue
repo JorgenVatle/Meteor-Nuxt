@@ -16,7 +16,7 @@ export default defineComponent({
     Meteor.subscribe('messages');
 
     return {
-      messages: Meteor.collection('messages').reactive().data();
+      messages: Meteor.collection('messages').reactive().data(),
     }
   }
 })
