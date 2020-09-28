@@ -12,7 +12,8 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.5"
+    "nuxt": "^2.14.5",
+    "simpleddp": "^2.2.4"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.5",
