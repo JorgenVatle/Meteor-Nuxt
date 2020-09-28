@@ -42,7 +42,7 @@ declare module 'simpleddp' {
       endpoint: string;
       SocketConstructor: WebSocket;
       reconnectInterval?: number;
-    }, plugins: any[]);
+    }, plugins?: any[]);
     collection<T = any>(name: string): MeteorCursor<T>
     login(options: KeyVal): Promise<UserDetails>
     call(method: string, ...args: any): Promise<any>;
