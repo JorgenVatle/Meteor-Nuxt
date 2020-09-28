@@ -1,4 +1,5 @@
 declare module 'simpleddp' {
+  import WebSocket from "isomorphic-ws";
 
   export interface DocumentChange<T> {
     prev: T,
@@ -37,7 +38,11 @@ declare module 'simpleddp' {
   export interface UserDetails { id: string, token: string, tokenExpires: any, type: string }
 
   export default class SimpleDDP {
-    constructor(opts: any, plugins: any[]);
+    constructor(opts: {
+      endpoint: string;
+      SocketConstructor: WebSocket;
+      reconnectInterval?: number;
+    }, plugins: any[]);
     collection<T = any>(name: string): MeteorCursor<T>
     login(options: KeyVal): Promise<UserDetails>
     call(method: string, ...args: any): Promise<any>;
