@@ -28,15 +28,24 @@ declare module 'simpleddp' {
     constructor(name: string, simpleDDPInstance: SimpleDDP);
     protected _name: string;
     protected _server: SimpleDDP;
-    protected _filter: <O>(data: T) => Partial<O>;
+    protected _filter: FilterFunction<T>;
     fetch(): Array<T>;
     filter(matcher: (item: T) => boolean): MeteorCursor<T>;
     reactive(): ReactiveCursor<T>;
   }
 
-  export interface ReactiveCursor<T> extends Cursor<T> {
-    one(): ReactiveCursor<T>
-    data(): Array<T>,
+  interface ReactiveCursorSettings {
+    sort: KeyVal<number>;
+    skip: number;
+    limit: number;
+  }
+
+  type FilterFunction<T> = <O>(data: T) => Partial<O>;
+
+  export class ReactiveCursor<T> extends Cursor<T> {
+    constructor(collection: MeteorCursor<T>, settings?: Partial<ReactiveCursorSettings>, filter?: FilterFunction<T>);
+    one(): ReactiveCursor<T>;
+    data(): Array<T>;
   }
 
   export interface UserDetails { id: string, token: string, tokenExpires: any, type: string }
@@ -62,3 +71,8 @@ declare module 'simpleddp/lib/classes/ddpCollection' {
   export class ddpCollection<T = any> extends MeteorCursor<T> {}
 }
 
+declare module 'simpleddp/lib/classes/ddpReactiveCollection' {
+  import {ReactiveCursor} from "simpleddp";
+
+  export class ddpReactiveCollection<T = any> extends ReactiveCursor<T> {}
+}
