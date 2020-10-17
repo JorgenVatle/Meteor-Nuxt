@@ -2,7 +2,7 @@
   <div class="h-screen w-screen flex justify-center items-center">
     <div>
       <h1 class="text-2xl mb-8 text-center">Hello, world!</h1>
-      <div style="max-height: 500px;" class="overflow-auto" ref="messageOutput">
+      <div style="max-height: 500px;" class="overflow-auto max-w-2xl" ref="messageOutput">
         <p class="my-4" v-for="message in messages">{{ message }}</p>
       </div>
       <form class="flex" @submit.prevent="sendMessage()">
