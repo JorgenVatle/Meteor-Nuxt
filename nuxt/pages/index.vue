@@ -23,6 +23,7 @@ export default defineComponent({
   setup(props, context) {
     Meteor.subscribe('messages');
     const messages = Meteor.collection('messages').fetch();
+    const userId = Date.now().toString();
 
     watch(messages, () => {
       const messageOutput = context.refs.messageOutput;
@@ -35,9 +36,9 @@ export default defineComponent({
         return messages.value.sort((message1, message2) => message1.createdAt.getTime() - message2.createdAt.getTime());
       }),
       sendMessage() {
-        const input = this.messageInput;
+        const content = this.messageInput;
         this.messageInput = '';
-        Meteor.call('messages.post', input).catch(() => this.messageInput = input);
+        Meteor.call('messages.post', { content, userId }).catch(() => this.messageInput = content);
       }
     }
   }
