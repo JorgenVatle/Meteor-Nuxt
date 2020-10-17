@@ -6,6 +6,6 @@
 `
 <style>
 html {
-  @apply text-gray-300 bg-gray-900;
+  @apply text-gray-300 bg-gray-800;
 }
 </style>
