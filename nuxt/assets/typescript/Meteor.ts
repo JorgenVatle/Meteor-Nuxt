@@ -1,9 +1,9 @@
-import SimpleDDP from "simpleddp";
 import WebSocket from "isomorphic-ws";
+import {ReactiveMeteor} from "~/assets/typescript/ReactiveMeteor";
 
 const API_URL = <string>process.env.API_URL;
 
-const Meteor = new SimpleDDP({
+const Meteor = new ReactiveMeteor({
   endpoint: API_URL,
   SocketConstructor: WebSocket,
 });
