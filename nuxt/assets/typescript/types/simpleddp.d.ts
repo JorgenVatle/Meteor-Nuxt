@@ -31,7 +31,7 @@ declare module 'simpleddp' {
     protected _filter: FilterFunction<T>;
     fetch(): Array<T>;
     filter(matcher: (item: T) => boolean): MeteorCursor<T>;
-    reactive(): ReactiveCursor<T>;
+    reactive(settings?: ReactiveCursorSettings): ReactiveCursor<T>;
   }
 
   export interface ReactiveCursorSettings {
