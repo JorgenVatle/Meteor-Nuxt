@@ -2,7 +2,7 @@
   <div class="h-screen w-screen flex justify-center items-center">
     <div>
       <h1 class="text-2xl mb-8 text-center">Hello, world!</h1>
-      <div style="max-height: 500px;" class="overflow-auto">
+      <div style="max-height: 500px;" class="overflow-auto" ref="messageOutput">
         <p class="my-4" v-for="message in messages">{{ message }}</p>
       </div>
       <form class="flex" @submit.prevent="sendMessage()">
@@ -16,13 +16,18 @@
 </template>
 
 <script>
-import { computed, defineComponent } from '@vue/composition-api';
+import { computed, defineComponent, watch } from '@vue/composition-api';
 import Meteor from 'assets/typescript/Meteor';
 
 export default defineComponent({
-  setup() {
+  setup(props, context) {
     Meteor.subscribe('messages');
     const messages = Meteor.collection('messages').fetch();
+
+    watch(messages, () => {
+      const messageOutput = context.refs.messageOutput;
+      messageOutput.scrollTo(0, messageOutput.scrollHeight);
+    })
 
     return {
       messageInput: '',
