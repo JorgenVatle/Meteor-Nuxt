@@ -42,10 +42,14 @@ declare module 'simpleddp' {
 
   type FilterFunction<T> = <O>(data: T) => Partial<O>;
 
-  export class ReactiveCursor<T> extends Cursor<T> {
+  class ReactiveCursor<T> {
     constructor(collection: MeteorCursor<T>, settings?: Partial<ReactiveCursorSettings>, filter?: FilterFunction<T>);
     one(): ReactiveCursor<T>;
     data(): Array<T>;
+  }
+
+  export interface ReactiveCursor<T> extends Omit<Cursor<T>, 'onChange'>{
+    onChange(handler: (newValue: Array<T>) => void): void;
   }
 
   export interface UserDetails { id: string, token: string, tokenExpires: any, type: string }
