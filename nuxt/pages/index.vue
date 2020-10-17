@@ -30,7 +30,9 @@ export default defineComponent({
         return messages.value.sort((message1, message2) => message1.createdAt.getTime() - message2.createdAt.getTime());
       }),
       sendMessage() {
-        return Meteor.call('messages.post', this.messageInput);
+        const input = this.messageInput;
+        this.messageInput = '';
+        Meteor.call('messages.post', input).catch(() => this.messageInput = input);
       }
     }
   }
