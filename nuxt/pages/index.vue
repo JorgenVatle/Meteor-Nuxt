@@ -16,16 +16,19 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api';
+import { computed, defineComponent } from '@vue/composition-api';
 import Meteor from 'assets/typescript/Meteor';
 
 export default defineComponent({
   setup() {
     Meteor.subscribe('messages');
+    const messages = Meteor.collection('messages').fetch();
 
     return {
       messageInput: '',
-      messages: Meteor.collection('messages').fetch(),
+      messages: computed(() => {
+        return messages.value.sort((message1, message2) => message1.createdAt.getTime() - message2.createdAt.getTime());
+      }),
       sendMessage() {
         return Meteor.call('messages.post', this.messageInput);
       }
