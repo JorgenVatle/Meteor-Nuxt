@@ -20,14 +20,18 @@ declare module 'simpleddp' {
     ready(): Promise<void>;
   }
 
-  export interface Cursor<T> {
+  export class Cursor<T> {
     onChange(listener: (change: CollectionChange<T> & DocumentChange<T>) => void): void;
   }
 
-  export interface MeteorCursor<T> extends Cursor<T> {
-    fetch(): Array<T>,
-    filter(matcher: (item: T) => boolean): MeteorCursor<T>,
-    reactive(): ReactiveCursor<T>,
+  export class MeteorCursor<T> extends Cursor<T> {
+    constructor(name: string, simpleDDPInstance: SimpleDDP);
+    protected _name: string;
+    protected _server: SimpleDDP;
+    protected _filter: <O>(data: T) => Partial<O>;
+    fetch(): Array<T>;
+    filter(matcher: (item: T) => boolean): MeteorCursor<T>;
+    reactive(): ReactiveCursor<T>;
   }
 
   export interface ReactiveCursor<T> extends Cursor<T> {
@@ -51,3 +55,10 @@ declare module 'simpleddp' {
     on(event: 'error', callback: (error: Error) => void): void
   }
 }
+
+declare module 'simpleddp/lib/classes/ddpCollection' {
+  import {MeteorCursor} from "simpleddp";
+
+  export class ddpCollection<T = any> extends MeteorCursor<T> {}
+}
+
