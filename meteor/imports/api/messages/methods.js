@@ -15,6 +15,8 @@ function getUser(userId) {
 }
 
 Meteor.startup(() => {
+    Messages.remove({});
+
     Meteor.methods({
 
         /**
