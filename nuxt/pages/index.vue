@@ -3,7 +3,13 @@
     <div>
       <h1 class="text-2xl mb-8 text-center">Hello, world!</h1>
       <div style="max-height: 500px;" class="overflow-auto max-w-2xl" ref="messageOutput">
-        <p class="my-4" v-for="message in messages">{{ message }}</p>
+        <div class="py-4 flex" v-for="message in messages" :key="message.id">
+          <img :src="message.user.picture.thumbnail" class="h-8 rounded-full mr-4">
+          <div>
+            <span class="font-medium block text-gray-600 leading-none mb-1">{{ message.user.name }}</span>
+            <p class="text-gray-200">{{ message.content }}</p>
+          </div>
+        </div>
       </div>
       <form class="flex" @submit.prevent="sendMessage()">
         <input v-model="messageInput" placeholder="Send a message!" class="bg-gray-800 px-4 py-1 flex-1 rounded-l-lg shadow outline-none">
