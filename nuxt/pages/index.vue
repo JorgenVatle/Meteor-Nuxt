@@ -25,7 +25,7 @@ export default defineComponent({
 
     return {
       messageInput: '',
-      messages: Meteor.collection('messages').reactive().data(),
+      messages: Meteor.collection('messages').fetch(),
       sendMessage() {
         return Meteor.call('messages.post', this.messageInput);
       }
