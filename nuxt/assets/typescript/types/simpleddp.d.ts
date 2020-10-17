@@ -34,7 +34,7 @@ declare module 'simpleddp' {
     reactive(): ReactiveCursor<T>;
   }
 
-  interface ReactiveCursorSettings {
+  export interface ReactiveCursorSettings {
     sort: KeyVal<number>;
     skip: number;
     limit: number;
