@@ -1,25 +1,34 @@
 {
-  "name": "meteor-nuxt",
+  "name": "Meteor-Nuxt",
   "version": "1.0.0",
-  "description": "A wicked experiment combining Nuxt and Meteor.js",
-  "author": "Jørgen Vatle",
   "private": true,
   "scripts": {
-    "dev": "npm run meteor && nuxt --port 8080",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "meteor": "meteor-client bundle ../meteor -s ../meteor"
+    "dev": "npm run build:ide-helpers && nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "build:ide-helpers": "tailwind.cmd build assets/css/tailwind.css -o assets/css/tailwind.ide-helper.css -c ./tailwind.config.js"
   },
   "dependencies": {
-    "buefy-loading-tracker": "^1.1.6",
-    "cross-env": "^5.2.0",
-    "meteor-client-bundler": "^0.6.0",
-    "nuxt": "^2.0.0",
-    "nuxt-buefy": "^0.2.1",
-    "vue-meteor-tracker": "^2.0.0-beta.3"
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/composition-api": "^0.13.4",
+    "@tailwindcss/typography": "^0.2.0",
+    "@types/marked": "^1.1.0",
+    "@types/sanitize-html": "^1.27.0",
+    "@vue/composition-api": "^1.0.0-beta.14",
+    "core-js": "^3.6.5",
+    "isomorphic-ws": "^4.0.1",
+    "marked": "^1.2.0",
+    "moment": "^2.29.1",
+    "nuxt": "^2.14.5",
+    "sanitize-html": "^2.1.0",
+    "simpleddp": "^2.2.4",
+    "ws": "^7.3.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "@nuxt/types": "^2.14.5",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/tailwindcss": "^3.0.2",
+    "@types/ws": "^7.2.6"
   }
 }

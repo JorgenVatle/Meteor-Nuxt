@@ -1,93 +1,52 @@
-const pkg = require('./package');
-const path = require('path');
+export default {
+  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
+  ssr: false,
 
-/**
- * Resolve external module.
- *
- * @param context
- * @param request
- * @param callback
- * @returns {boolean|void|*}
- */
-function resolveExternals(context, request, callback) {
-  return resolveMeteor(request, callback) || callback();
-}
+  // Target (https://go.nuxtjs.dev/config-target)
+  target: 'static',
 
-/**
- * Resolves a Meteor module.
- *
- * @param request
- * @param callback
- * @returns {boolean}
- */
-function resolveMeteor(request, callback) {
-  const match = request.match(/^meteor\/(.+)$/);
-  const pack = match && match[1];
-
-  if (pack) {
-    callback(null, 'Package["' + pack + '"]');
-    return true;
-  }
-}
-
-module.exports = {
-  mode: 'spa',
-
-  /*
-  ** Headers of the page
-  */
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: pkg.name,
+    title: 'Meteor-Nuxt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+  env: {
+    API_URL: process.env.API_URL || 'ws://localhost:3050/websocket'
+  },
 
-  /*
-  ** Global CSS
-  */
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-      '~/plugins/meteor-client',
+    '@/plugins/VueCompositionApi'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+  ],
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy'
   ],
 
-  /*
-  ** Build configuration
-  */
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    vendor: [
-        'meteor-client'
-    ],
-
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, context) {
-      config.resolve.alias['api'] = path.join(__dirname, '../meteor/imports/api');
-      config.externals = [resolveExternals];
-    }
   }
-};
+}
