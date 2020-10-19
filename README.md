@@ -1,4 +1,4 @@
-# Meteor-Nuxt
+# ![Meteor-Nuxt](.github/assets/logo-alt.png)
 A wicked experiment attempting combining Meteor and Nuxt for highly modern application development with split
 responsibilities.
 
