@@ -55,7 +55,12 @@ Meteor.startup(() => {
     welcomeMessages.forEach((message) => {
         createMessage({
             content: message,
-            userId: '7',
+            userId: '9',
         })
     });
+
+    createMessage({
+        content: 'Try opening multiple tabs to see messages arrive in real time. 👌',
+        userId: 'nine'
+    })
 });
