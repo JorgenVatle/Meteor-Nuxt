@@ -9,8 +9,7 @@
     "nuxt": "cd nuxt && npm run dev",
     "install": "npm run setup:nuxt && npm run setup:meteor",
     "setup:meteor": "cd meteor && meteor npm i",
-    "setup:nuxt": "cd nuxt && npm i",
-    "publish:nuxt": "cd nuxt && npm run generate"
+    "setup:nuxt": "cd nuxt && npm i"
   },
   "repository": {
     "type": "git",
