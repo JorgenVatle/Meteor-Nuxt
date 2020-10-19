@@ -1,6 +1,5 @@
 # ![Meteor-Nuxt](.github/assets/logo-alt.png)
-A wicked experiment attempting combining Meteor and Nuxt for highly modern application development with split
-responsibilities.
+A wicked experiment combining Meteor and Nuxt for highly modern application development with split responsibilities.
 
 We use Nuxt for its excellent SSR/SSG (Static Site Generator) capabilities. Something Meteor really can't do very well
 without having to dive into its internals. Here we use Meteor for what it does best, 
