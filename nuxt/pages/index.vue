@@ -1,10 +1,10 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto mt-32">
-      <div class=" bg-gray-900 rounded-lg shadow-2xl p-4">
+      <div class="bg-white rounded-lg shadow-2xl p-4">
 
         <!-- Heading -->
-        <h1 class="text-2xl mb-8 text-center">Meteor Chat, but on Nuxt!</h1>
+        <h1 class="text-2xl mb-8 text-center text-gray-700">Meteor Chat, but on Nuxt!</h1>
 
         <!-- Messages -->
         <div style="height: 500px;" class="overflow-auto max-w-2xl" ref="messageOutput">
@@ -13,8 +13,8 @@
 
         <!-- Send Message -->
         <form class="flex pt-2" @submit.prevent="sendMessage()">
-          <input v-model="messageInput" placeholder="Send a message!" class="bg-gray-800 px-4 py-1 flex-1 rounded-l-lg shadow outline-none" autofocus="autofocus">
-          <button type="submit" class="bg-indigo-800 text-white font-medium px-6 py-2 rounded-r-lg">
+          <input v-model="messageInput" placeholder="Send a message!" class="bg-gray-200 px-4 py-1 flex-1 rounded-l-lg shadow outline-none" autofocus="autofocus">
+          <button type="submit" class="bg-indigo-600 text-white font-medium px-6 py-2 rounded-r-lg">
             Send
           </button>
         </form>
