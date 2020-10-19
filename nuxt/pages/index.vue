@@ -31,7 +31,7 @@
           </div>
         </router-link>
 
-        <a href="#" class="text-gray-700 flex items-center mr-4 hover:underline flex-1 justify-end">
+        <a href="https://github.com/JorgenVatle/Meteor-Nuxt/blob/master/nuxt/pages/index.vue" target="_blank" class="text-gray-700 flex items-center mr-4 hover:underline flex-1 justify-end">
           <div class="mr-4">
             View source
           </div>
