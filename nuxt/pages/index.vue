@@ -1,18 +1,18 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-2xl mx-auto mt-32">
-      <div class="bg-white rounded-lg shadow-2xl p-4">
+      <div class="bg-white rounded-lg shadow-2xl py-4">
 
         <!-- Heading -->
         <h1 class="text-2xl mb-8 text-center text-gray-700">Meteor Chat, but on Nuxt!</h1>
 
         <!-- Messages -->
         <div style="height: 500px;" class="overflow-auto max-w-2xl" ref="messageOutput">
-          <chat-message class="py-4" v-for="message in messages" :message="message" :key="message.id" />
+          <chat-message class="p-4 hover:bg-gray-100" v-for="message in messages" :message="message" :key="message.id" />
         </div>
 
         <!-- Send Message -->
-        <form class="flex pt-2" @submit.prevent="sendMessage()">
+        <form class="flex pt-2 px-4" @submit.prevent="sendMessage()">
           <input v-model="messageInput" placeholder="Send a message!" class="bg-gray-200 px-4 py-1 flex-1 rounded-l-lg shadow outline-none" autofocus="autofocus">
           <button type="submit" class="bg-indigo-600 text-white font-medium px-6 py-2 rounded-r-lg">
             Send

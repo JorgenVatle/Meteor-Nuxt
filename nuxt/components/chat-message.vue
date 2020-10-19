@@ -2,7 +2,7 @@
   <div class="flex">
     <img alt="profile image" :src="message.user.picture.thumbnail" class="h-8 w-8 rounded-full mr-4">
     <div>
-      <span class="font-medium block text-gray-600 leading-none mb-1">{{ message.user.name }}</span>
+      <span class="font-medium block text-gray-700 leading-none mb-1 -mt-1">{{ message.user.name }}</span>
       <div class="prose" v-html="sanitizedMessage"></div>
     </div>
   </div>
