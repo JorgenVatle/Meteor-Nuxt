@@ -48,7 +48,13 @@ export default defineComponent({
       }),
       sendMessage() {
         const content = this.messageInput;
+
+        if (!content) {
+          return;
+        }
+
         this.messageInput = '';
+
         Meteor.call('messages.post', { content, userId }).catch(() => this.messageInput = content);
       }
     }
