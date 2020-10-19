@@ -20,6 +20,25 @@
         </form>
 
       </div>
+
+      <div class="flex items-center justify-between mt-6">
+        <router-link to="/no-composition" class="text-gray-700 flex items-center hover:underline flex-grow pr-4">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <div class="ml-2 flex-shrink">
+            View Non-Composition API Example
+          </div>
+        </router-link>
+
+        <a href="#" class="text-gray-700 flex items-center mr-4 hover:underline flex-1 justify-end">
+          <div class="mr-4">
+            View source
+          </div>
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+        </a>
+      </div>
+
     </div>
   </div>
 </template>
