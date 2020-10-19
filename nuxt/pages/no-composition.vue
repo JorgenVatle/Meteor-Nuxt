@@ -3,7 +3,7 @@
     <div class="max-w-2xl mx-auto my-16">
       <div class="shadow-2xl">
         <div class="bg-white rounded-t-lg p-4">
-          <h1 class="text-2xl">Real-Time Output for Meteor Chat</h1>
+          <h1 class="text-2xl text-gray-700">Real-Time Output for Meteor Chat</h1>
           <p class="text-gray-500">(Not using the <a class="font-medium hover:underline" href="https://v3.vuejs.org/api/composition-api.html" target="_blank">Vue Composition API</a>)</p>
         </div>
         <div class="bg-gray-800 p-4 rounded-b-lg overflow-auto" style="max-height: 550px" ref="messageOutput">
