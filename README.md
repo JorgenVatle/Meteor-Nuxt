@@ -1,7 +1,7 @@
 # ![Meteor-Nuxt](.github/assets/logo-alt.png)
 A wicked experiment combining Meteor and Nuxt for highly modern application development with split responsibilities.
 
-We use Nuxt for its excellent SSR/SSG (Static Site Generator) capabilities. Something Meteor really can't do very well
+We use Nuxt for its excellent SSR/SSG (Static Site Generator) capabilities, something Meteor really can't do very well
 without having to dive into its internals. Here we only use Meteor for what it does best, which is its  
 [DDP protocol](https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md)!
 
