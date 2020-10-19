@@ -1,6 +1,6 @@
 <template>
   <div class="flex" v-show="sanitizedMessage.length">
-    <img alt="profile image" :src="message.user.picture.thumbnail" class="h-8 w-8 rounded-full mr-4">
+    <img alt="profile image" :src="message.user.picture.thumbnail" class="h-10 w-10 rounded-full mr-4">
     <div class="flex-1">
       <div class="mb-1 -mt-1 flex items-center">
         <span class="font-medium text-gray-700 leading-none flex-1">{{ message.user.name }}</span>
