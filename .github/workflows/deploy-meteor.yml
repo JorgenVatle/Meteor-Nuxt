@@ -19,9 +19,9 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - uses: JorgenVatle/inject-secret@v1
-          with:
-            target: './meteor/.deploy/mup.js'
-            replace: 'DEPLOY_TARGET=${{ secrets.DEPLOY_TARGET }}'
+        with:
+          target: './meteor/.deploy/mup.js'
+          replace: 'DEPLOY_TARGET=${{ secrets.DEPLOY_TARGET }}'
 
       - name: 'Install Dependencies'
         run: meteor npm install
