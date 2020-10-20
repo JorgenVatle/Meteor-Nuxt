@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - publish-preview
 
 jobs:
   integrate:
