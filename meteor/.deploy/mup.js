@@ -1,7 +1,7 @@
 module.exports = {
   servers: {
     one: {
-      host: '__API_SERVER_HOST__',
+      host: '__DEPLOY_TARGET__',
       username: 'root',
     }
   },
