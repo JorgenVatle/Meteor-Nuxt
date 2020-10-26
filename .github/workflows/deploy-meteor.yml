@@ -1,0 +1,29 @@
+name: 'Meteor'
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  integrate:
+    name: 'Deploy to Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: meteorengineer/setup-meteor@v1
+        with:
+          meteor-release: '1.8.1'
+      - uses: webfactory/ssh-agent@v0.2.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - uses: JorgenVatle/inject-secret@v1
+        with:
+          target: './meteor/.deploy/mup.js'
+          replace: 'DEPLOY_TARGET=${{ secrets.DEPLOY_TARGET }}'
+
+      - name: 'Install Dependencies'
+        run: meteor npm install
+
+      - name: 'Deploy'
+        run: cd meteor/.deploy && npx mup deploy
