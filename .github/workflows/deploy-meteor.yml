@@ -30,5 +30,4 @@ jobs:
         run: npm i mup
 
       - name: 'Deploy'
-        run: |
-          cd meteor/.deploy && mup deploy
+        run: cd meteor && npm run deploy
