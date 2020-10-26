@@ -26,6 +26,9 @@ jobs:
       - name: 'Install Dependencies'
         run: meteor npm install
 
+      - name: 'Install meteor-up'
+        run: npm i mup
+
       - name: 'Deploy'
         run: |
           cd meteor/.deploy && mup deploy
