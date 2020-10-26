@@ -19,7 +19,7 @@ export default {
   },
 
   env: {
-    API_URL: process.env.API_URL || 'ws://localhost:3050/websocket'
+    API_URL: process.env.API_URL || 'ws://localhost:3050/websocket',
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
