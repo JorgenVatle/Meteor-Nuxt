@@ -21,7 +21,7 @@
     "marked": "^1.2.0",
     "moment": "^2.29.1",
     "nuxt": "^2.14.5",
-    "sanitize-html": "^2.1.0",
+    "sanitize-html": "^2.3.2",
     "simpleddp": "^2.2.4",
     "ws": "^7.3.1"
   },
