@@ -19,7 +19,7 @@
     "core-js": "^3.6.5",
     "isomorphic-ws": "^4.0.1",
     "marked": "^1.2.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "nuxt": "^2.14.5",
     "sanitize-html": "^2.1.0",
     "simpleddp": "^2.2.4",
